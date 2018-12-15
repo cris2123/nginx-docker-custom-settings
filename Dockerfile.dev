@@ -19,8 +19,9 @@ RUN wget http://nginx.org/download/nginx-1.15.7.tar.gz \
     && rm -r nginx-1.15.7.tar.gz
 
 COPY ./env_variables.sh .
-COPY ./setup_nginx.sh .
 COPY ./nginx.service ./lib/systemd/system/
+COPY ./setup_nginx.sh .
+
 
 RUN /bin/bash ./setup_nginx.sh
 
